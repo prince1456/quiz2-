@@ -1,0 +1,50 @@
+<h1>Support Requests</h1>
+
+
+<div>
+<%= form_tag shows_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :keyword, params[:keyword] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+</div>
+
+<hr>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Department</th>
+  <th>Message</th>
+  <th>Action</th>
+  </tr
+></thead>
+  <% @supports.each do |x| %>
+<tbody>
+
+<tr>
+  <td><%= x.name %></td>
+  <td><%= x.email %></td>
+  <td><%= x.department %></td>
+  <td><%= x.message %></td>
+  <td> <%= link_to "edit", support_path(x.id),{class: "btn btn-info btn-lg"} %>
+  <%= link_to "Delete", support_path(x.id),
+                                    class: "btn btn-info btn-lg",
+                                     method: :delete, data: {confirm: "Are you sure?"}
+                                      %>
+                                    <%   if x.mark == "undone" %>
+                                  <%= link_to "Not Done", support_path(x.id),{class: "btn btn-info btn-lg"} %>
+                                  <% else %>
+                                  <%= link_to "Done", support_path(x.id),{class: "btn btn-info btn-lg"} %>
+                                  <% end %>
+ </td>
+</tr>
+</tbody>
+<% end %>
+</table>
+<div class="digg_pagination">
+<%= paginate @supports %>
+</div>

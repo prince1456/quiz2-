@@ -1,0 +1,22 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Department</th>
+  <th>Message</th>
+  <th>Action</th>
+  </tr
+></thead>
+
+<tbody>
+<tr>
+  <td><%= @supports.name %></td>
+  <td><%= @supports.email %></td>
+  <td><%= @supports.department %></td>
+  <td><%= @supports.message %></td>
+  <td> <%= link_to "Edit", edit_support_path(@supports.id),{class: "btn btn-info btn-lg"} %>
+</td>
+</tr>
+</tbody>
+</table>

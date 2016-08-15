@@ -1,0 +1,36 @@
+<div class="container">
+<%= form_for @supports do |x| %>
+<div>
+<%= x.label :name %>
+<%= x.text_field :name %>
+</div>
+<div>
+  <%= x.label :email %>
+  <%= x.text_field :email, placeholder: "example@gmail.com"%>
+
+</div>
+  <div>
+    <%= x.radio_button :department, 'sales', :checked => true  %>
+    <%= x.label :department_sales, 'Sales'%>
+    <%= x.radio_button :department, 'marketing'  %>
+    <%= x.label :department_marketing, 'Marketing'%>
+    <%= x.radio_button :department, 'technical'%>
+    <%= x.label :department_technical, 'Technical'%>
+  </div>
+  <div>
+    <%= x.label :message %>
+    <%= x.text_area :message %>
+  </div>
+  <div>
+    <%= x.radio_button :mark, 'undone'%>
+    <%= x.label :mark_undone, 'Undone'%>
+  <%= x.radio_button :mark, 'done'  %>
+  <%= x.label :mark_done, 'Done'%>
+</div>
+    <div>
+       <%= x.submit "save" %>
+    </div>
+
+    <% end %>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<%= @supports.errors.full_messages.join(",") %>
+<div style="padding-top:10px">
+<%= form_for @supports, :html => { :class => "article-form" } do |x| %>
+<div class="form-group padd">
+<%= x.label :name, class:"col-sm-2 control-label" %>
+ <div class="col-sm-10 padd">
+<%= x.text_field :name, class:"form-control" %>
+</div>
+</div>
+</br>
+<div class="form-group padd ">
+  <%= x.label :email, class:"col-sm-2 control-label" %>
+   <div class="col-sm-10 padd">
+  <%= x.text_field :email, class:"form-control", placeholder: "example@gmail.com"%>
+</div>
+</div>
+<br>
+  <div class="radio-inline padd">
+
+    <%= x.radio_button :department, 'sales', :checked => true  %>
+    <%= x.label :department_sales, 'Sales', class:"radio-inline radi"%>
+    <%= x.radio_button :department, 'marketing'  %>
+    <%= x.label :department_marketing, 'Marketing', class:"radio-inline radi"%>
+    <%= x.radio_button :department, 'technical'%>
+    <%= x.label :department_technical, 'Technical', class:"radio-inline radi"%>
+  </div>
+  <div class="form-group padd">
+    <%= x.label :message, class:"col-sm-2 control-label" %>
+     <div class="col-sm-10 padd">
+    <%= x.text_area :message, class:"form-control" %>
+  </div>
+</div>
+    <div class="padd">
+       <%= x.submit "save", class:"btn btn-danger btn-lg" %>
+    </div>
+
+    <% end %>
+  </form>
+</div>
