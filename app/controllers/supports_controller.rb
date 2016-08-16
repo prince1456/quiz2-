@@ -52,8 +52,7 @@ end
       redirect_to shows_path
       flash[:alert]= "Messsage successfully deleted"
     end
-
-
+ 
 private
 
       def find_params
